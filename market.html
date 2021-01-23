@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/events.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+        <link rel="stylesheet" type="text/css" href="css/browser.css">
+        <link rel="icon" href="./img/logo.png">
+        <title>sWallet</title>
+    </head>
+    <body>
+        <div class="topbar">
+            <h3 id="headerh">Market</h3>
+            <h4 id="total">Sell or Buy!</h4>
+        </div>
+        <div class="center">
+            <div  id="hover" class="hover" style="display: none;">
+                <div class="container">
+                    <h2>Sell Item</h2>
+                    <img id="upload" class="upload" src="./img/icons/upload.png"/>
+                    <input id="name" placeholder="Item name" />
+                    <textarea id="desc" placeholder="Item description"></textarea>
+                    <input id="price" placeholder="Price + Currency (exp. 12 HIVE)" />
+                    <p>By clicking "Sell!" i agree with the selling policy of sWallet!</p>
+                    <p id="sellb" class="sell">Sell!</p>
+                    <p>Total-Cost: 0.001 Hive + 1% fee when selled</p>
+                </div>
+            </div>
+
+            <div id="hoverb" class="hover" style="display: none;">
+                <div class="container">
+                    <h2>Buy Item</h2>
+                    <img id="bimg" class="upload" src="./img/icons/upload.png"/>
+                    <h1 id="bh1">Ring</h1>
+                    <p id="bd">Ring</p>
+                    <h2 id="h2">Ring</h2>
+                    <p id="buyd">By clicking "Buy!" i agree with the selling policy of sWallet!</p>
+                    <p id="buy" class="sell">Buy!</p>
+                </div>
+            </div>
+
+
+
+
+
+
+            <br>
+            <div class="eventdate">Your offers</div>
+            <div class="eventdiv" id="sell">
+                <div class="eventvault" style="">
+                    <img src="./img/icons/sell.png"></img>
+                </div>
+                <div style="float: left;">
+                    <p class="eventname">Sell an Item</p>
+                    <p class="eventinfo">Click here to sell something...</p>
+                </div>
+                <div style="float: right;">
+                    <p class="eventvalue" style="style_"></p>
+                </div>
+            </div>
+            <div id="mitems">
+                
+            </div>
+            <div class="eventdate">Last Items</div>
+            <div id="items">
+                <img class="loading" src="./img/icons/loading.gif" />
+            </div>
+        </div>
+        <div class="bottombar">
+            <div class="bottomicn">
+                <img id="accounts" class="bottombtn red" height="15px" src="./img/icons/acounts.png"></img>
+                <img id="events" class="bottombtn" height="15px" src="./img/icons/history.png"></img>
+                <img id="transfer" class="bottombtn" height="15px" src="./img/icons/transfer.png"></img>
+                <img id="help" class="bottombtn" height="15px" src="./img/icons/help.png"></img>
+                <img id="logout" class="bottombtn" height="15px" src="./img/icons/logout.png"></img>
+            </div>
+        </div>
+
+        <!--Template-->
+        <div id="eventtemp" style="display: none;">
+            <div class="eventdiv" id="id_">
+                <div class="eventvault" style="">
+                    <img src="src_"></img>
+                </div>
+                <div style="float: left;">
+                    <p class="eventname">name_</p>
+                    <p class="eventinfo">info_</p>
+                </div>
+                <div style="float: right;">
+                    <p class="eventvalue" style="style_">amount_</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Biblios-->
+        <script type="text/javascript" src="js/biblio/steem.js"></script>
+        <script type="text/javascript" src="js/biblio/hive.js"></script>
+        <script type="text/javascript" src="js/biblio/jquery.js"></script>
+        <script type="text/javascript" src="js/platform.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/navi.js"></script>
+        <script type="text/javascript" src="js/values.js"></script>
+        <script type="text/javascript" src="js/misc.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <script type="text/javascript" src="js/market.js"></script>
+    </body>
+</html>

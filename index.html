@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="css/startup.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+        <link rel="stylesheet" type="text/css" href="css/browser.css">
+        <link rel="icon" href="./img/logo.png">
+        <title>sWallet</title>
+    </head>
+    <body>
+        <div class="center">
+            <h2 class="header">sWallet</h2>
+            <h3 class="info">A Wallet for Steem & Hive</h3>
+            <div id="logindata" style="display: none;">
+                <input id="username" placeholder="username" /><br>
+                <input id="auth" placeholder="active-key (optional)"/><br>
+                <p id="hive" class="login" style="color: rgb(255, 96, 96);">Hive Login!</p>
+                <p id="steem" class="login" style="color: rgb(86, 128, 255);">Steem Login!</p><br>
+            </div>
+            <p class="created">Created by @platuro</p>
+        </div>
+        <!--<p class="facts">Did you know?<br>Steem released 2010!</p>-->
+        <!--Biblios-->
+        <script type="text/javascript" src="js/biblio/steem.js"></script>
+        <script type="text/javascript" src="js/biblio/jquery.js"></script>
+        <script type="text/javascript" src="js/platform.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="./js/index.js"></script>
+    
+        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyDQWtFGJzm2HODkYZdxMq2l9XobCP_nlts",
+                authDomain: "swallet-3cb9c.firebaseapp.com",
+                databaseURL: "https://swallet-3cb9c.firebaseio.com",
+                projectId: "swallet-3cb9c",
+                storageBucket: "swallet-3cb9c.appspot.com",
+                messagingSenderId: "912401026384",
+                appId: "1:912401026384:web:90f63834f1e0502d7a3055",
+                measurementId: "G-3TZK55Y2HQ"
+            };
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
+    </body>
+</html>

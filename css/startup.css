@@ -1,0 +1,87 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background: linear-gradient(90deg, #263238 1%, #1f2a2f 100%);
+    color: white;
+    font-family: "Open Sans", system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+.header{
+    margin-bottom: 0px;
+    font-size: 32px;
+}
+
+.info{
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 95vh;
+  }
+
+input{
+    background-color: rgba(255, 255, 255, 0.103);
+    color: white;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.151);
+    border-radius: 4px;
+    margin-bottom: 5px;
+    height: 24px;
+    width: 200px;
+    outline: none !important;
+}
+
+input::placeholder{
+    color: rgba(226, 226, 226, 0.555);
+}
+
+.login{
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    font-size: 16px;
+    width: 100px;
+    margin-left: 0px;
+    float: left;
+}
+
+#scan{
+    margin-top: 8px;
+    width: auto;
+    text-align: center;
+    float: none;
+}
+
+.facts{
+    color: rgba(245, 222, 179, 0.747);
+    margin-top: -60px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.created{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
