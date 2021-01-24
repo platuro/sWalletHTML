@@ -87,6 +87,26 @@ function Transfer(suser,val,cr,smemo){
     }
 }
 
+function BinanceQuery(endpoint,params,api,key,callback){
+    $.ajax({
+        url: "https://api.binance.com/api/v3/time",
+        success: function(time){
+            var end = "recvWindow=60000&timestamp="+time.serverTime
+            var hmac = sha256.hmac(key, end);
+            var end = end + "&signature="+hmac
+
+            var t = endpoint+"?"+end;
+            $.ajax({
+                url: server+"/binance",
+                data: { "url": t, "api": api},
+                success: function(data){
+                    callback(data)
+                }
+            })
+        }
+    })
+}
+
 function toDataUrl(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onload = function() {

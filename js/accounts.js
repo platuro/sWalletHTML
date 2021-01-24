@@ -17,6 +17,14 @@ getPrices(function(err,res){
     });
 })
 
+$("#bval0").css("display","none")
+$("#bval").css("display","none")
+$('#blogin').css("display","none")
+$('#blogin').click(function(){
+    localStorage.setItem("bapi",$('#bapi').val())
+    localStorage.setItem("bsec",$('#bsec').val())
+    bData();
+})
 
 function SetData(response){
     console.log(response)
@@ -33,4 +41,40 @@ function SetData(response){
 
     document.getElementById("total").innerText = "Total: $"+total.toFixed(2);
     document.getElementById("simg").src = AvatarURL+user+"/avatar";
+
+    if(localStorage.getItem("bapi")){
+        bData();
+    }else{
+        $('#blogin').css("display","block")
+        $("#bval0").css("display","block")
+        $("#bval").css("display","block")
+    }
+}
+
+function SetTotal(){
+    document.getElementById("total").innerText = "Total: $"+total.toFixed(2);
+}
+
+function bData(){
+    BinanceQuery("account","",localStorage.getItem("bapi"),localStorage.getItem("bsec"),function(data){
+        var data = JSON.parse(data)
+        if(data.makerCommission){
+            $('#blogin').css("display","none")
+            $("#bval0").css("display","block")
+            $("#bval").css("display","block")
+            data.balances.forEach(element => {
+                if(element.asset == "HIVE"){
+                    $("#bval").html(parseFloat(element.free).toFixed(3)+" HIVE")
+                    total = total + (parseFloat(element.free) * ticker[mainCurrency.toLowerCase()]);
+                    SetTotal();
+                }
+            });
+            $("#bval0").html("Logout")
+            $("#bval0").click(function(){
+                localStorage.removeItem("bapi")
+                localStorage.removeItem("bsec")
+                location.reload();
+            })
+        }
+    });
 }

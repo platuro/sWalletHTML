@@ -8,6 +8,9 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
         <link rel="stylesheet" type="text/css" href="css/browser.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+
         <link rel="icon" href="./img/logo.png">
         <title>sWallet</title>
     </head>
@@ -25,6 +28,17 @@
                     <p class="accountname" id="steemuser"><img class="loading" src="./img/icons/loading.gif" /></p>
                     <p class="accountvalue" id="steemvalv"></p>
                     <p class="accountvalue" id="steemvalvd"></p>
+                </div>
+            </div>
+            <div class="accountdiv" id="binance">
+                <div class="accountvault" style="background-color: rgb(0, 132, 255);">
+                    <img id="bimg" src="/img/icons/binance.png"></img>
+                </div>
+                <div style="float: left;">
+                    <p class="accountname" id="b">Binance</p>
+                    <p class="accountvalue" id="bval"><input id="bapi" placeholder="API-Key"></input></p>
+                    <p class="accountvalue" id="bval0"><input id="bsec" placeholder="API-Secret"></input></p>
+                    <p class="accountvalue" id="blogin">Login</p>
                 </div>
             </div>
             <!--<div class="accountdiv" id="add">
