@@ -23,8 +23,8 @@ function SetData(response){
     var steem = parseFloat(response[0].balance.split(" ")[0]);
     var sbd = parseFloat(response[0][secCurrency.toLowerCase()+"_balance"].split(" ")[0]);
 
-    total = total + (steem * ticker.steem);
-    total = total + (sbd * ticker.sbd);
+    total = total + (steem * ticker[mainCurrency.toLowerCase()]);
+    total = total + (sbd * ticker[secCurrency.toLowerCase()]);
 
     $('#total').html(steem + " "+mainCurrency+" | " +sbd+ " "+secCurrency+" | $"+total.toFixed(2))
 }

@@ -17,15 +17,6 @@ getPrices(function(err,res){
     });
 })
 
-$("#bval0").css("display","none")
-$("#bval").css("display","none")
-$('#blogin').css("display","none")
-$('#blogin').click(function(){
-    localStorage.setItem("bapi",$('#bapi').val())
-    localStorage.setItem("bsec",$('#bsec').val())
-    bData();
-})
-
 function SetData(response){
     console.log(response)
     document.getElementById("steemvalv").innerText = response[0].balance;
@@ -41,18 +32,28 @@ function SetData(response){
 
     document.getElementById("total").innerText = "Total: $"+total.toFixed(2);
     document.getElementById("simg").src = AvatarURL+user+"/avatar";
-
-    if(localStorage.getItem("bapi")){
-        bData();
-    }else{
-        $('#blogin').css("display","block")
-        $("#bval0").css("display","block")
-        $("#bval").css("display","block")
-    }
 }
 
 function SetTotal(){
     document.getElementById("total").innerText = "Total: $"+total.toFixed(2);
+}
+
+//BINANCE
+$("#bval0").css("display","none")
+$("#bval").css("display","none")
+$('#blogin').css("display","none")
+$('#blogin').click(function(){
+    localStorage.setItem("bapi",$('#bapi').val())
+    localStorage.setItem("bsec",$('#bsec').val())
+    bData();
+})
+
+if(localStorage.getItem("bapi")){
+    bData();
+}else{
+    $('#blogin').css("display","block")
+    $("#bval0").css("display","block")
+    $("#bval").css("display","block")
 }
 
 function bData(){
